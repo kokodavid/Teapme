@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_indicator/page_indicator.dart';
+import 'package:teapme/UI/Login.dart';
 import 'package:teapme/UI/homepage.dart';
 import 'package:teapme/UI/onboard_first_page.dart';
 import 'package:teapme/Utils/colors.dart';
@@ -117,6 +118,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                              padding: const EdgeInsets.symmetric(
                                  horizontal: 30.0),
                              child: InkWell(
+                                 onTap: (){
+                                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => Login()));
+                                 },
                                  child: _onBoardingBtns(
                                      "Log In", AppColors.lightGrey,AppColors.darkColor)),
                            ),

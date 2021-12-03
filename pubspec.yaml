@@ -36,7 +36,7 @@ dependencies:
   shared_preferences: ^2.0.7
   page_indicator: ^0.4.1
   bottom_navy_bar: ^6.0.0
-
+  switcher_button: ^0.0.4
 dev_dependencies:
   flutter_test:
     sdk: flutter
