@@ -2,8 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:page_indicator/page_indicator.dart';
 import 'package:teapme/UI/Login.dart';
+import 'package:teapme/UI/SignUp.dart';
+import 'package:teapme/UI/forgotPassMailSent.dart';
+import 'package:teapme/UI/forgotPassword.dart';
 import 'package:teapme/UI/homepage.dart';
 import 'package:teapme/UI/onboard_first_page.dart';
+import 'package:teapme/UI/registrationMail.dart';
 import 'package:teapme/Utils/colors.dart';
 
 import 'onboard_model_pages.dart';
@@ -129,7 +133,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                                  horizontal: 30.0),
                              child: InkWell(
                                onTap: (){
-                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                                 Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
                                },
                                  child: _onBoardingBtns(
                                           "Create an Account",

@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:teapme/Resources/constants.dart';
-import 'package:teapme/UI/forgotPassword.dart';
-import 'package:teapme/UI/homepage.dart';
+import 'package:teapme/UI/registrationMail.dart';
 import 'package:teapme/Utils/colors.dart';
 
-import 'SignUp.dart';
-
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class SignUp extends StatefulWidget {
+  const SignUp({Key? key}) : super(key: key);
 
   @override
-  _LoginState createState() => _LoginState();
+  _SignUpState createState() => _SignUpState();
 }
 
-class _LoginState extends State<Login> {
+class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,7 +26,7 @@ class _LoginState extends State<Login> {
                   child: Icon(Icons.arrow_back_ios),
                 ),
                 Text(
-                  "Log In",
+                  "Create An Account",
                   style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold
@@ -47,34 +44,20 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: [
                     Align(
-                      alignment: Alignment.topLeft,
+                        alignment: Alignment.topLeft,
                         child: Text("Email Address")
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 10,bottom: 20),
                       height: 50,
                       child: TextFormField(
-                        cursorColor: Colors.black,
-                        decoration: textFormDecoration
+                          cursorColor: Colors.black,
+                          decoration: textFormDecoration
                       ),
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Align(
-                            alignment: Alignment.topLeft,
-                            child: Text("Password")
-                        ),
-                        GestureDetector(
-                          onTap: (){
-                            Navigator.of(context).push(MaterialPageRoute(builder: (context) => ForgotPassword()));
-                          },
-                          child: Align(
-                              alignment: Alignment.topRight,
-                              child: Text("Forgot Password ?")
-                          ),
-                        ),
-                      ],
+                    Align(
+                        alignment: Alignment.topLeft,
+                        child: Text("Password")
                     ),
                     Container(
                       margin: EdgeInsets.only(top: 10,bottom: 20),
@@ -86,7 +69,7 @@ class _LoginState extends State<Login> {
                     ),
                     GestureDetector(
                       onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => HomePage()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (context) => RegistrationMail()));
                       },
                       child: Container(
                         margin: EdgeInsets.only(top: 5,bottom: 20),
@@ -98,15 +81,15 @@ class _LoginState extends State<Login> {
                         ),
                         child: Center(
                           child: Text(
-                            "Log In",
+                            "Create an Account",
                             style: TextStyle(
-                              color: Colors.white
+                                color: Colors.white
                             ),
                           ),
                         ),
                       ),
                     ),
-                    Text("Or Sign In With"),
+                    Text("Or Sign up With"),
                     Container(
                       margin: EdgeInsets.only(top: 10,bottom: 20),
                       height: 50,
@@ -124,7 +107,7 @@ class _LoginState extends State<Login> {
                             "Continue With Google",
                             style: TextStyle(
                                 color: AppColors.textLight,
-                              fontWeight: FontWeight.bold
+                                fontWeight: FontWeight.bold
                             ),
                           ),
                         ],
@@ -135,7 +118,7 @@ class _LoginState extends State<Login> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                              "New to Teapme ?"
+                              "Already have an account ?"
                           ),
                           SizedBox(width: 10,),
                           GestureDetector(
@@ -143,7 +126,7 @@ class _LoginState extends State<Login> {
                               Navigator.of(context).push(MaterialPageRoute(builder: (context) => SignUp()));
                             },
                             child: Text(
-                              "Create an Account",
+                              "Log In",
                               style: TextStyle(
                                   color: AppColors.primaryOrange
                               ),

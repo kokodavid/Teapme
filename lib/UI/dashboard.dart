@@ -18,20 +18,20 @@ class _DashboardState extends State<Dashboard> {
           Stack(
               children: [
                 Container(
-                  height: 140,
+                  height: 85,
                   color: AppColors.homepageTop,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(top: 25.0,left: 20),
+                        padding: const EdgeInsets.only(left: 20),
                         child: Image.asset(
                             "assets/teapme.png",
                           height: 35,
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(top: 25.0,right: 20),
+                        padding: const EdgeInsets.only(right: 20),
                         child: Container(
                           child: Row(
                             children: [
@@ -48,7 +48,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 110.0),
+                  padding: const EdgeInsets.only(top: 70.0),
                   child: Container(
                     height: 50,
                     decoration: new BoxDecoration(

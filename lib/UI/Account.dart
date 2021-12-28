@@ -20,7 +20,6 @@ class _AccountState extends State<Account> {
             Container(
               margin: EdgeInsets.only(bottom: 13),
               color: Colors.white,
-              padding: const EdgeInsets.only(top: 55.0),
               child: Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Column(

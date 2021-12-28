@@ -34,46 +34,48 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
 
-    return Scaffold(
-      body: SizedBox.expand(
-        child: PageView(
-          controller: _pageController,
-          onPageChanged: (index) {
+    return SafeArea(
+      child: Scaffold(
+        body: SizedBox.expand(
+          child: PageView(
+            controller: _pageController,
+            onPageChanged: (index) {
+              setState(() => _currentIndex = index);
+            },
+            children: <Widget>[
+              Dashboard(),
+              Supporters(),
+              Account(),
+            ],
+          ),
+        ),
+        bottomNavigationBar: BottomNavyBar(
+          selectedIndex: _currentIndex,
+          onItemSelected: (index) {
             setState(() => _currentIndex = index);
+            _pageController.jumpToPage(index);
           },
-          children: <Widget>[
-            Dashboard(),
-            Supporters(),
-            Account(),
+          items: <BottomNavyBarItem>[
+            BottomNavyBarItem(
+              activeColor: AppColors.secondaryGreen,
+                inactiveColor: Colors.black,
+                title: Text('Dashboard'),
+                icon: Icon(Icons.dashboard)
+            ),
+            BottomNavyBarItem(
+                title: Text('Teapers'),
+                icon: Icon(CupertinoIcons.heart),
+              activeColor: AppColors.secondaryGreen,
+              inactiveColor: Colors.black,
+            ),
+            BottomNavyBarItem(
+                title: Text('Account'),
+                icon: Icon(CupertinoIcons.person_circle),
+              activeColor: AppColors.secondaryGreen,
+              inactiveColor: Colors.black,
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavyBar(
-        selectedIndex: _currentIndex,
-        onItemSelected: (index) {
-          setState(() => _currentIndex = index);
-          _pageController.jumpToPage(index);
-        },
-        items: <BottomNavyBarItem>[
-          BottomNavyBarItem(
-            activeColor: AppColors.secondaryGreen,
-              inactiveColor: Colors.black,
-              title: Text('Dashboard'),
-              icon: Icon(Icons.dashboard)
-          ),
-          BottomNavyBarItem(
-              title: Text('Teapers'),
-              icon: Icon(CupertinoIcons.heart),
-            activeColor: AppColors.secondaryGreen,
-            inactiveColor: Colors.black,
-          ),
-          BottomNavyBarItem(
-              title: Text('Account'),
-              icon: Icon(CupertinoIcons.person_circle),
-            activeColor: AppColors.secondaryGreen,
-            inactiveColor: Colors.black,
-          ),
-        ],
       ),
     );
   }

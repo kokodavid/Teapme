@@ -12,5 +12,7 @@ class AppColors {
   static const fadeOrange = Color(0x66FF9F1C);
   static const homepageTop = Color(0xFF292929);
   static const background = Color(0xFFF4F4F4);
+  static const greyLight = Color(0xFFC4C4C4);
+  static const light = Color(0xFFEEEEEE);
 
 }
